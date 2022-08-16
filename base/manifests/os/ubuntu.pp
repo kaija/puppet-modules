@@ -1,7 +1,7 @@
 #
 #
 #
-class base::os::linux::ubuntu {
-    include base::os::linux::ubuntu::apt
+class base::os::ubuntu {
+    include base::os::ubuntu::apt
 
 }
