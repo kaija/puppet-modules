@@ -4,9 +4,7 @@
 class ops::nodes::aio inherits base {
     include accounts::user::all
 
-    class {
-        'ssh':
-    }
+    include ops::roles::influxdb
 
     group {
         'penrose':

@@ -12,4 +12,8 @@ class base::os::linux {
         pip     => 'present',
         dev     => 'present',
     }
+
+    class {
+        'ssh':
+    }
 }
