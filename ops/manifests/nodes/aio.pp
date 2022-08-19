@@ -3,8 +3,7 @@
 #
 class ops::nodes::aio inherits base {
     include accounts::user::all
-
-    include ops::roles::influxdb
+    include ops::roles::docker
 
     group {
         'penrose':
@@ -14,4 +13,5 @@ class ops::nodes::aio inherits base {
         groups  +> ['users'],
     }
 
+    include puppet_operational_dashboards
 }
