@@ -12,7 +12,7 @@ class base::os::linux {
         pip     => 'present',
         dev     => 'present',
     }
-
+    include sudo
     class {
         'ssh':
     }

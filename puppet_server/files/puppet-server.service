@@ -1,0 +1,16 @@
+[Unit]
+Description=Puppet server service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/etc/puppetlabs
+Environment=COMPOSE_HTTP_TIMEOUT=600
+ExecStart=/usr/bin/env docker-compose -f /etc/puppetlabs/docker-compose.yml up -d
+ExecStop=/usr/bin/env docker-compose -f /etc/puppetlabs/docker-compose.yml stop
+StandardOutput=syslog
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

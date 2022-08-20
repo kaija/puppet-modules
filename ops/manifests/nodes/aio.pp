@@ -12,6 +12,10 @@ class ops::nodes::aio inherits base {
     Accounts::User <| groups == 'penrose' |> {
         groups  +> ['users'],
     }
+    class { 'sudo::allow':
+       add_users  => ['ubuntu'],
+       add_groups => ['penrose'],
+    }
 
-    include puppet_operational_dashboards
+    include puppet_server
 }
