@@ -8,6 +8,5 @@ class puppet_server {
     ~> service {'puppet-server':
         ensure => 'running',
         enable => true,
-        active => true,
     }
 }
