@@ -16,4 +16,14 @@ class base::os::linux {
     class {
         'ssh':
     }
+
+    class { 'hosts':
+        host_entries => {
+            puppet => {
+                ip => '127.0.0.1',
+                host_aliases => ['puppet', 'puppetdb']
+            }
+        }
+    }
+
 }
